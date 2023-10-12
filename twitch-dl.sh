@@ -1,4 +1,10 @@
 #!/bin/bash
+
+if [ "$1" == "-h" -o "$1" == "--help" ]; then
+	echo "Usage:"
+	exit 0
+fi
+
 . /home/viceemargo/.bashrc
 dir="/mnt/samba/share/TwitchVODs"
 twitchDL="/home/viceemargo/.local/bin/twitch-dl"
