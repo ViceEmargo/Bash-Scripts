@@ -1,7 +1,13 @@
 #!/bin/bash
 
+#Check for the command being run with the help argument first, then test if sufficient arguments have been passed to the command.
+#Have the user input arguments to avoid hardcoded values, allowing the script to be more versatile and better understood.
+
 if [ "$1" == "-h" -o "$1" == "--help" ]; then
-	echo "Usage:"
+	echo "Usage: twitch-dl.sh [STREAMER]... [OUTPUT_DIRECTORY]"
+	exit 0
+elif [[ -z "$1" || -z "$2" ]]; then
+	echo "Error. Usage: twitch-dl.sh [STREAMER]... [OUTPUT_DIRECTORY]"
 	exit 0
 fi
 
